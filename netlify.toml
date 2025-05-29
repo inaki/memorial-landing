@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  VITE_SUPABASE_URL = "https://qsphpznuvzpgaehejysc.supabase.co"
+  VITE_SUPABASE_ANON_KEY = "your-anon-key"
+  SECRETS_SCAN_OMIT_KEYS = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzcGhwem51dnpwZ2FlaGVqeXNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg0MzAyOTYsImV4cCI6MjA2NDAwNjI5Nn0.zczjlh62vxGZxDx_g7ZhPtWh2ZdSa2MdOzdicj9ODrY"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
