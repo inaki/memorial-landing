@@ -38,7 +38,9 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onNavigate}
           >
             <Heart className="h-6 w-6 text-primary-600" />
-            <span className="text-xl font-serif font-medium">Memorial</span>
+            <span className="text-xl font-serif font-medium">
+              Kindred Farewell
+            </span>
           </Link>
 
           <nav

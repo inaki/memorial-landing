@@ -9,7 +9,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
   const [headerOpen, setHeaderOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 relative">
+    <div className="min-h-screen flex flex-col bg-background relative">
       <button
         className="fixed top-4 right-4 z-50 p-2 bg-white rounded shadow-md md:hidden"
         onClick={() => setHeaderOpen((open) => !open)}

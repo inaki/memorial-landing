@@ -8,6 +8,8 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
+  DialogTitle,
+  DialogDescription,
 } from "../../components/ui/dialog";
 
 export const TributeWall: React.FC = () => {
@@ -32,7 +34,9 @@ export const TributeWall: React.FC = () => {
   if (error) {
     return (
       <div className="text-center py-12 text-red-500">
-        <p>Error loading tributes. Please try again later.</p>
+        <p>
+          Error al cargar los tributos. Por favor, inténtalo de nuevo más tarde.
+        </p>
       </div>
     );
   }
@@ -40,19 +44,23 @@ export const TributeWall: React.FC = () => {
   if (!tributes || tributes.length === 0) {
     return (
       <div className="text-center py-12 text-gray-500">
-        <p>No tributes yet. Be the first to share a memory.</p>
+        <p>Aún no hay tributos. Sé el primero en compartir un recuerdo.</p>
         {/* Floating Action Button for empty state */}
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <button
               className="fixed bottom-8 right-8 z-50 bg-primary-600 hover:bg-primary-700 text-white rounded-full p-4 shadow-lg transition-colors"
-              aria-label="Add Tribute"
+              aria-label="Agregar Tributo"
               onClick={() => setOpen(true)}
             >
               <Plus className="h-6 w-6" />
             </button>
           </DialogTrigger>
           <DialogContent className="max-w-md w-full">
+            <DialogTitle>Comparte un Recuerdo</DialogTitle>
+            <DialogDescription>
+              Completa el formulario para agregar tu tributo.
+            </DialogDescription>
             <TributeForm />
           </DialogContent>
         </Dialog>
@@ -67,13 +75,17 @@ export const TributeWall: React.FC = () => {
         <DialogTrigger asChild>
           <button
             className="fixed bottom-8 right-8 z-50 bg-primary-600 hover:bg-primary-700 text-white rounded-full p-4 shadow-lg transition-colors"
-            aria-label="Add Tribute"
+            aria-label="Agregar Tributo"
             onClick={() => setOpen(true)}
           >
             <Plus className="h-6 w-6" />
           </button>
         </DialogTrigger>
         <DialogContent className="max-w-md w-full">
+          <DialogTitle>Comparte un Recuerdo</DialogTitle>
+          <DialogDescription>
+            Completa el formulario para agregar tu tributo.
+          </DialogDescription>
           <TributeForm />
         </DialogContent>
       </Dialog>

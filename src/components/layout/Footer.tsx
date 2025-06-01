@@ -1,5 +1,5 @@
-import React from 'react';
-import { Heart } from 'lucide-react';
+import React from "react";
+import { Heart } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
@@ -7,12 +7,12 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center space-y-2">
           <div className="flex items-center gap-1 text-gray-500">
-            <span>Created with</span>
+            <span>Creado con</span>
             <Heart size={16} className="text-primary-500 fill-primary-500" />
-            <span>in loving memory</span>
+            <span> en la memoria de Felix Aranzadi Manterola</span>
           </div>
           <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Memorial Event App
+            &copy; {new Date().getFullYear()} Kindred Farewell
           </p>
         </div>
       </div>

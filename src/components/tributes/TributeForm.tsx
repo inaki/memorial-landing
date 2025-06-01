@@ -41,7 +41,9 @@ export const TributeForm: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       className="bg-white rounded-lg shadow-md p-6"
     >
-      <h2 className="text-2xl font-serif font-medium mb-6">Share a Memory</h2>
+      <h2 className="text-2xl font-serif font-medium mb-6">
+        Comparte un Recuerdo
+      </h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -53,15 +55,15 @@ export const TributeForm: React.FC = () => {
           name="author"
           validators={{
             onChange: ({ value }) =>
-              !value ? "Please enter your name" : undefined,
+              !value ? "Por favor ingresa tu nombre" : undefined,
           }}
         >
           {(field) => (
             <Input
-              label="Your Name"
+              label="Tu Nombre"
               value={field.state.value}
               onChange={(e) => field.handleChange(e.target.value)}
-              placeholder="Enter your name"
+              placeholder="Ingresa tu nombre"
               error={field.state.meta.errors[0]}
               onBlur={field.handleBlur}
             />
@@ -72,15 +74,15 @@ export const TributeForm: React.FC = () => {
           name="message"
           validators={{
             onChange: ({ value }) =>
-              !value ? "Please enter a message" : undefined,
+              !value ? "Por favor ingresa un mensaje" : undefined,
           }}
         >
           {(field) => (
             <Textarea
-              label="Your Message"
+              label="Tu Mensaje"
               value={field.state.value}
               onChange={(e) => field.handleChange(e.target.value)}
-              placeholder="Share your memory or message..."
+              placeholder="Comparte tu recuerdo o mensaje..."
               error={field.state.meta.errors[0]}
               onBlur={field.handleBlur}
             />
@@ -91,7 +93,7 @@ export const TributeForm: React.FC = () => {
           {(field) => (
             <ImageUpload
               key={imageUploadKey}
-              label="Add a Photo (Optional)"
+              label="Agregar una Foto (Opcional)"
               onImageSelected={(file) => field.handleChange(file)}
             />
           )}
@@ -108,7 +110,7 @@ export const TributeForm: React.FC = () => {
                 isLoading={isSubmitting || tributeMutation.isPending}
                 disabled={!canSubmit}
               >
-                Share Tribute
+                Compartir Tributo
               </Button>
             </div>
           )}
