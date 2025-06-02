@@ -2,26 +2,18 @@ import React from "react";
 import { CalendarDays, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { format } from "date-fns";
-import { useEventQuery } from "../../hooks/useEvents";
+import papiImg from '../../../dist/assets/papi@2x.png';
 
 export const EventDetails: React.FC = () => {
-  const { data: event, isLoading, error } = useEventQuery();
-
-  if (isLoading) {
-    return (
-      <div className="flex justify-center py-12">
-        <div className="animate-spin h-8 w-8 border-4 border-primary-500 rounded-full border-t-transparent"></div>
-      </div>
-    );
-  }
-
-  if (error || !event) {
-    return (
-      <div className="text-center py-12 text-red-500">
-        <p>Error loading event details. Please try again later.</p>
-      </div>
-    );
-  }
+  // Hardcoded event data
+  const event = {
+    title: "En Memoria de Felix Aranzadi Manterola",
+    image_url: "/assets/papi@2x.png",
+    location: "Parroquia Santísimo Sacramento Calle Caney A-11 Urb. Caguas, Caguas, PR 00727",
+    date: "2025-06-15T14:00:00Z",
+    description: "Les invitamos cordialmente a la misa en memoria de Felix Aranzadi Manterola, para honrar su vida y compartir este momento de recogimiento junto a su familia.",
+    additionalInfo: "",
+  };
 
   const formattedDate = format(
     new Date(event.date),
@@ -39,7 +31,7 @@ export const EventDetails: React.FC = () => {
         {event.image_url && (
           <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden">
             <img
-              src={event.image_url}
+              src={papiImg}
               alt={event.title}
               className="w-full h-full object-cover"
             />
@@ -65,7 +57,9 @@ export const EventDetails: React.FC = () => {
 
             <div className="flex items-center gap-2 text-gray-700">
               <MapPin className="h-5 w-5 text-primary-600" />
-              <span>{event.location}</span>
+              <a href={`https://maps.app.goo.gl/JPkYoBtJ6tiwhfwZ7`} target="_blank" rel="noopener noreferrer">
+                  <span>{event.location}</span>
+              </a>
             </div>
           </div>
 

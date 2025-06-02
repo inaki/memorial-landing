@@ -49,7 +49,7 @@ export const LoginPage: React.FC = () => {
         className="sm:mx-auto sm:w-full sm:max-w-md"
       >
         <div className="flex justify-center">
-          <Heart className="h-12 w-12 text-primary-600" />
+          <Heart className="h-12 w-12 text-[var(#d4b063)]" />
         </div>
         <h2 className="mt-6 text-center text-3xl font-serif font-medium text-gray-900">
           Memorial Event
@@ -77,7 +77,12 @@ export const LoginPage: React.FC = () => {
             />
 
             <div>
-              <Button type="submit" className="w-full" isLoading={isLoading}>
+              <Button
+                variant="primary"
+                type="submit"
+                className="w-full"
+                isLoading={isLoading}
+              >
                 Enter Event
               </Button>
             </div>

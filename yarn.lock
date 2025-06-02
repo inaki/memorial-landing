@@ -732,7 +732,7 @@
 
 "@tanstack/react-form@^1.12.0":
   version "1.12.0"
-  resolved "https://registry.npmjs.org/@tanstack/react-form/-/react-form-1.12.0.tgz"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-form/-/react-form-1.12.0.tgz#4b874dc50ccc1be69bc0a35cc3a63f135cd37d79"
   integrity sha512-0tZNbZ9BChA8cMYcdGlknC1XdcapU+HpD+1IwLt3QiAU/Gsp8unUYB5nZFPrwhZWKBzJY/tUwhtF6jlr2+psQg==
   dependencies:
     "@tanstack/form-core" "1.12.0"
@@ -1802,6 +1802,11 @@ minimatch@^9.0.4:
   resolved "https://registry.npmjs.org/minipass/-/minipass-7.1.2.tgz"
   integrity sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==
 
+moment@^2.30.1:
+  version "2.30.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.30.1.tgz#f8c91c07b7a786e30c59926df530b4eac96974ae"
+  integrity sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==
+
 motion-dom@^11.18.1:
   version "11.18.1"
   resolved "https://registry.npmjs.org/motion-dom/-/motion-dom-11.18.1.tgz"
@@ -2002,7 +2007,7 @@ prelude-ls@^1.2.1:
   resolved "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prop-types@^15.8.1:
+prop-types@^15.5.7, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -2020,6 +2025,13 @@ queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
+
+react-datetime@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/react-datetime/-/react-datetime-3.3.1.tgz#60870ef7cb70f3a98545385e068f16344a50b1db"
+  integrity sha512-CMgQFLGidYu6CAlY6S2Om2UZiTfZsjC6j4foXcZ0kb4cSmPomdJ2S1PhK0v3fwflGGVuVARGxwkEUWtccHapJA==
+  dependencies:
+    prop-types "^15.5.7"
 
 react-dom@^19.0.0:
   version "19.1.0"

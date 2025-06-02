@@ -57,10 +57,6 @@ export const TributeWall: React.FC = () => {
             </button>
           </DialogTrigger>
           <DialogContent className="max-w-md w-full">
-            <DialogTitle>Comparte un Recuerdo</DialogTitle>
-            <DialogDescription>
-              Completa el formulario para agregar tu tributo.
-            </DialogDescription>
             <TributeForm />
           </DialogContent>
         </Dialog>
@@ -82,10 +78,6 @@ export const TributeWall: React.FC = () => {
           </button>
         </DialogTrigger>
         <DialogContent className="max-w-md w-full">
-          <DialogTitle>Comparte un Recuerdo</DialogTitle>
-          <DialogDescription>
-            Completa el formulario para agregar tu tributo.
-          </DialogDescription>
           <TributeForm />
         </DialogContent>
       </Dialog>

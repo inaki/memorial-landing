@@ -5,6 +5,7 @@ import { Layout } from "./pages/Layout";
 import { EventDetails } from "./components/event/EventDetails";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { TributesPage } from "./pages/TributesPage";
+import Admin from "./pages/Admin";
 
 export const routes: RouteObject[] = [
   {
@@ -30,6 +31,10 @@ export const routes: RouteObject[] = [
         </Layout>
       </ProtectedRoute>
     ),
+  },
+  {
+    path: "/dadimin",
+    element: <Admin />,
   },
   {
     path: "*",
