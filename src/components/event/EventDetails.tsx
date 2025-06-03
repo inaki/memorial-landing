@@ -2,13 +2,13 @@ import React from "react";
 import { CalendarDays, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { format } from "date-fns";
-import papiImg from "../../../dist/assets/papi@2x.png";
+import papiImg from "/public/assets/papi.png";
 
 export const EventDetails: React.FC = () => {
   // Hardcoded event data
   const event = {
     title: "En Memoria de Felix Aranzadi Manterola",
-    image_url: "/assets/papi@2x.png",
+    image_url: "/public/assets/papi.png",
     location:
       "Parroquia Santísimo SacramentoCalle Caney A-11 Urb. Caguas, Caguas, PR 00727",
     date: "2025-06-07T14:00:00Z",
