@@ -1,8 +1,9 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Heart, LogOut } from "lucide-react";
+import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
-import { clearAuth } from "../../lib/supabase";
+import { useAtom } from "jotai";
+import { tributeDialogOpenAtom } from "../../atoms/tributeAtom";
 
 interface HeaderProps {
   mobile?: boolean;
@@ -14,12 +15,7 @@ export const Header: React.FC<HeaderProps> = ({
   onNavigate,
 }) => {
   const location = useLocation();
-
-  const handleLogout = () => {
-    clearAuth();
-    window.location.href = "/";
-  };
-
+  const [, setOpen] = useAtom(tributeDialogOpenAtom);
   return (
     <header className="bg-white shadow-sm">
       <div
@@ -59,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({
                   : "text-gray-600 hover:text-gray-900"
               }`}
             >
-              Event Details
+              Detalles del Evento
               {location.pathname === "/event" && !mobile && (
                 <motion.div
                   layoutId="navIndicator"
@@ -77,7 +73,7 @@ export const Header: React.FC<HeaderProps> = ({
                   : "text-gray-600 hover:text-gray-900"
               }`}
             >
-              Tribute Wall
+              Muro de Recuerdos
               {location.pathname === "/tributes" && !mobile && (
                 <motion.div
                   layoutId="navIndicator"
@@ -88,15 +84,14 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => {
-                handleLogout();
+                setOpen(true);
                 if (onNavigate) onNavigate();
               }}
               className={`flex items-center gap-1 ${
                 mobile ? "text-2xl" : "text-sm"
               } text-gray-600 hover:text-gray-900`}
             >
-              <LogOut size={mobile ? 24 : 16} />
-              <span>Exit</span>
+              <span>añade tu mensaje</span>
             </button>
           </nav>
         </div>

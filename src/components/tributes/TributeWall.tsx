@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Masonry from "react-masonry-css";
 import { TributeCard } from "./TributeCard";
 import { useTributesQuery } from "../../hooks/useTributes";
@@ -9,12 +9,14 @@ import {
   DialogContent,
   DialogTrigger,
   DialogTitle,
-  DialogDescription,
 } from "../../components/ui/dialog";
+import { useAtom } from "jotai";
+import { tributeDialogOpenAtom } from "../../atoms/tributeAtom";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export const TributeWall: React.FC = () => {
   const { data: tributes, isLoading, error } = useTributesQuery();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useAtom(tributeDialogOpenAtom);
 
   const breakpointColumns = {
     default: 3,
@@ -57,6 +59,9 @@ export const TributeWall: React.FC = () => {
             </button>
           </DialogTrigger>
           <DialogContent className="max-w-md w-full">
+            <VisuallyHidden>
+              <DialogTitle>Comparte un Recuerdo</DialogTitle>
+            </VisuallyHidden>
             <TributeForm />
           </DialogContent>
         </Dialog>
@@ -78,6 +83,9 @@ export const TributeWall: React.FC = () => {
           </button>
         </DialogTrigger>
         <DialogContent className="max-w-md w-full">
+          <VisuallyHidden>
+            <DialogTitle>Comparte un Recuerdo</DialogTitle>
+          </VisuallyHidden>
           <TributeForm />
         </DialogContent>
       </Dialog>

@@ -2,16 +2,18 @@ import React from "react";
 import { CalendarDays, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { format } from "date-fns";
-import papiImg from '../../../dist/assets/papi@2x.png';
+import papiImg from "../../../dist/assets/papi@2x.png";
 
 export const EventDetails: React.FC = () => {
   // Hardcoded event data
   const event = {
     title: "En Memoria de Felix Aranzadi Manterola",
     image_url: "/assets/papi@2x.png",
-    location: "Parroquia Santísimo Sacramento Calle Caney A-11 Urb. Caguas, Caguas, PR 00727",
+    location:
+      "Parroquia Santísimo SacramentoCalle Caney A-11 Urb. Caguas, Caguas, PR 00727",
     date: "2025-06-15T14:00:00Z",
-    description: "Les invitamos cordialmente a la misa en memoria de Felix Aranzadi Manterola, para honrar su vida y compartir este momento de recogimiento junto a su familia.",
+    description:
+      "Les invitamos cordialmente a la misa en memoria de Felix Aranzadi Manterola, para honrar su vida y compartir este momento de recogimiento junto a su familia.",
     additionalInfo: "",
   };
 
@@ -57,8 +59,12 @@ export const EventDetails: React.FC = () => {
 
             <div className="flex items-center gap-2 text-gray-700">
               <MapPin className="h-5 w-5 text-primary-600" />
-              <a href={`https://maps.app.goo.gl/JPkYoBtJ6tiwhfwZ7`} target="_blank" rel="noopener noreferrer">
-                  <span>{event.location}</span>
+              <a
+                href={`https://maps.app.goo.gl/JPkYoBtJ6tiwhfwZ7`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>{event.location}</span>
               </a>
             </div>
           </div>
