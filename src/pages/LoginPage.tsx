@@ -37,7 +37,7 @@ export const LoginPage: React.FC = () => {
       if (password === HARDCODED_PASSWORD) {
         localStorage.setItem("authenticated", "true");
         setAuth(true);
-        navigate("/event");
+        navigate("/tributes");
       } else {
         setError("Incorrect password");
       }
