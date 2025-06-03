@@ -49,7 +49,7 @@ export const TributeForm: React.FC = () => {
           e.preventDefault();
           form.handleSubmit();
         }}
-        className="space-y-6"
+        className="space-y-6 pb-36"
       >
         <form.Field
           name="author"
