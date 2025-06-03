@@ -4,13 +4,17 @@ import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import { Input } from "../components/ui/Input";
 import { Button } from "../components/ui/Button";
-import { checkPassword, setAuth } from "../lib/supabase";
+import { useSetAtom } from "jotai";
+import { authAtom } from "../atoms/authAtom";
+
+const HARDCODED_PASSWORD = "memorial2025";
 
 export const LoginPage: React.FC = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const setAuth = useSetAtom(authAtom);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,9 +28,8 @@ export const LoginPage: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const isValid = await checkPassword(password);
-
-      if (isValid) {
+      if (password === HARDCODED_PASSWORD) {
+        localStorage.setItem("authenticated", "true");
         setAuth(true);
         navigate("/event");
       } else {

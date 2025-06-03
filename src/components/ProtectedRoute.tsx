@@ -1,9 +1,11 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { isAuthenticated } from "../lib/supabase";
+import { useAtom } from "jotai";
+import { authAtom } from "../atoms/authAtom";
 
 export const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  return isAuthenticated() ? <>{children}</> : <Navigate to="/" />;
+  const [authenticated] = useAtom(authAtom);
+  return authenticated ? <>{children}</> : <Navigate to="/" />;
 };
