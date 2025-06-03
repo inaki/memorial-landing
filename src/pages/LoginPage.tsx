@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
@@ -15,6 +15,12 @@ export const LoginPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const setAuth = useSetAtom(authAtom);
+
+  useEffect(() => {
+    if (localStorage.getItem("authenticated") === "true") {
+      navigate("/tributes");
+    }
+  }, [navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
