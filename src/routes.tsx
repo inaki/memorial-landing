@@ -38,6 +38,6 @@ export const routes: RouteObject[] = [
   },
   {
     path: "*",
-    element: <LoginPage />, // or a 404 page
+    element: <LoginPage />, // catch-all
   },
 ];
