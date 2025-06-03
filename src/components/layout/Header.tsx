@@ -2,8 +2,6 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
-import { useAtom } from "jotai";
-import { tributeDialogOpenAtom } from "../../atoms/tributeAtom";
 
 interface HeaderProps {
   mobile?: boolean;
@@ -15,7 +13,6 @@ export const Header: React.FC<HeaderProps> = ({
   onNavigate,
 }) => {
   const location = useLocation();
-  const [, setOpen] = useAtom(tributeDialogOpenAtom);
   return (
     <header className="bg-white shadow-sm">
       <div
@@ -81,18 +78,6 @@ export const Header: React.FC<HeaderProps> = ({
                 />
               )}
             </Link>
-
-            <button
-              onClick={() => {
-                setOpen(true);
-                if (onNavigate) onNavigate();
-              }}
-              className={`flex items-center gap-1 ${
-                mobile ? "text-2xl" : "text-sm"
-              } text-gray-600 hover:text-gray-900`}
-            >
-              <span>añade tu mensaje</span>
-            </button>
           </nav>
         </div>
       </div>
