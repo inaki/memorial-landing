@@ -11,7 +11,7 @@ export const EventDetails: React.FC = () => {
     image_url: "/assets/papi@2x.png",
     location:
       "Parroquia Santísimo SacramentoCalle Caney A-11 Urb. Caguas, Caguas, PR 00727",
-    date: "2025-06-15T14:00:00Z",
+    date: "2025-06-07T14:00:00Z",
     description:
       "Les invitamos cordialmente a la misa en memoria de Felix Aranzadi Manterola, para honrar su vida y compartir este momento de recogimiento junto a su familia.",
     additionalInfo: "",
