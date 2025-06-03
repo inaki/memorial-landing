@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TributeWall } from "../components/tributes/TributeWall";
 import { Button } from "../components/ui/Button";
 import { useAtom } from "jotai";
 import { tributeDialogOpenAtom } from "../atoms/tributeAtom";
+import { useNavigate } from "react-router-dom";
 
 export const TributesPage: React.FC = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const isAuthed = localStorage.getItem("authenticated") === "true";
+    if (!isAuthed) {
+      navigate("/");
+    }
+  }, []);
+
   const [, setOpen] = useAtom(tributeDialogOpenAtom);
   return (
     <div className="max-w-7xl mx-auto">
